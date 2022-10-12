@@ -11,6 +11,7 @@ function getRandomHexColor(event) {
   }`;
 
 body.style.backgroundColor = newColor;
+bodyColor.textContent = newColor;
 console.log (newColor);
 }
 

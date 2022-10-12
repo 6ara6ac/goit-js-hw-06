@@ -13,26 +13,39 @@ const images = [
   },
 ];
 
-
 const imgeEl = document.querySelector('.gallery');
 
-const gallery = images.map(element => {
+let gallery = '';
 
-  const galleryEl = document.createElement('li');
-  const galleryImg = document.createElement('img');
-
-  // galleryImg.setAttribute('scr', element.url)
-
-  galleryImg.src = element.url;
-  galleryImg.width = '360';
-  galleryImg.height = '240';
-  galleryImg.alt = element.alt;
-
-  galleryEl.append(galleryImg);
-
-  return galleryEl;
+images.forEach (img =>{
+  gallery = images
+  .map(img => `<li class="gallery__item"><img class="gallery__img" src="${img.url}" alt="${img.alt}" width="300" height="200"> </li>`)
+  .join('');
 });
 
+imgeEl.insertAdjacentHTML('afterbegin', gallery);
 
 
-imgeEl.append(...gallery);
+
+// const imgeEl = document.querySelector('.gallery');
+
+// const gallery = images.map(element => {
+
+//   const galleryEl = document.createElement('li');
+//   const galleryImg = document.createElement('img');
+
+//   // galleryImg.setAttribute('scr', element.url)
+
+//   galleryImg.src = element.url;
+//   galleryImg.width = '360';
+//   galleryImg.height = '240';
+//   galleryImg.alt = element.alt;
+
+//   galleryEl.append(galleryImg);
+
+//   return galleryEl;
+// });
+
+
+
+// imgeEl.append(...gallery);

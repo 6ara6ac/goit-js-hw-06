@@ -15,6 +15,7 @@ return event.currentTarget.value;
 
 function onCreateBoxes (total) {
   boxRefs.innerHTML = '';
+  const boxesCreated = [];
 
   total = inputRefs.value;
 
@@ -24,8 +25,9 @@ function onCreateBoxes (total) {
     box.style.height = `${30 + 10 * i}px`;
     box.style.backgroundColor = `${getRandomHexColor()}`;
     box.style.marginTop = '20px';
-    boxRefs.appendChild(box);
+    boxesCreated.push(box);
   }
+  boxRefs.append(...boxesCreated);
 }
 
 function onDestroyBoxes () {
